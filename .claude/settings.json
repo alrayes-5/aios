@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./private/**)",
+      "Edit(./private/**)",
+      "Write(./private/**)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read|Glob|Grep|Edit|Write|MultiEdit|NotebookEdit|Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "for p in python3 python py; do if \"$p\" -c 'import sys; sys.exit(sys.version_info < (3, 8))' >/dev/null 2>&1; then \"$p\" \"$CLAUDE_PROJECT_DIR/.aios/guard.py\" && exit 0; exit 2; fi; done; echo \"AIOS guard: no working python3, python or py was found, so every action is blocked. Install Python 3 (see START_HERE.md).\" >&2; exit 2"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "for p in python3 python py; do if \"$p\" -c 'import sys; sys.exit(sys.version_info < (3, 8))' >/dev/null 2>&1; then exec \"$p\" \"$CLAUDE_PROJECT_DIR/.aios/session-start.py\"; fi; done; exit 0"
+          }
+        ]
+      }
+    ]
+  }
+}

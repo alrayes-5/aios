@@ -1,0 +1,17 @@
+# The AI is blocked from private/, and git never sees it either
+private/*
+!private/README.md
+
+# Secrets and local settings
+.env
+.env.*
+.claude/settings.local.json
+*.log
+.DS_Store
+__pycache__/
+
+# Created by OpenCode on first run
+.opencode/node_modules/
+.opencode/package.json
+.opencode/package-lock.json
+.opencode/bun.lock
