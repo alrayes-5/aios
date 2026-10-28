@@ -4,9 +4,9 @@
 
 ## The AI may do alone
 
-- Read everything in the workspace except `private/`.
+- Read everything in the workspace.
 - Write plans, drafts and summaries in `plans/` and `outputs/`.
-- Compare the numbers in `data/kpi-tracker.md` with their targets.
+- Compare the numbers in `data/kpis.csv` with their targets.
 
 ## Needs approval first
 
@@ -21,7 +21,7 @@
 - Member pay, bank details, passwords, supplier contracts.
 - Anything a customer asked us to keep private.
 
-Refer to wholesale accounts as "Account A", "Account B" and so on. The key to the letters stays in `private/`.
+Refer to wholesale accounts as "Account A", "Account B" and so on. The key to the letters stays outside this workspace folder.
 
 ## If a rule gets in the way
 

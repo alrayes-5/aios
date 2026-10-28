@@ -10,7 +10,7 @@ Dana Rowe, operations lead and one of the eight members. Dana runs the daily pla
 
 - Production and delivery schedule.
 - Wholesale accounts: keeping them on time and happy.
-- The weekly numbers in `data/kpi-tracker.md`.
+- The weekly numbers in `data/kpis.csv`.
 - Preparing the Monday members' meeting.
 
 ## How This Workspace Helps

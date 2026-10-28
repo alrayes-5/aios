@@ -1,0 +1,6 @@
+metric,unit,target,direction
+Loaves baked,count per week,2400,up
+Bread waste,% of loaves baked,5,down
+On-time wholesale deliveries,%,98,up
+Active wholesale accounts,count,14,up
+Shop revenue,thousands per week,9,up

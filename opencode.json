@@ -1,15 +1,20 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "permission": {
-    "read": {
-      "*": "allow",
-      "private/*": "deny",
-      "*/private/*": "deny"
-    },
     "edit": {
       "*": "allow",
-      "private/*": "deny",
-      "*/private/*": "deny"
-    }
+      "AGENTS.md": "deny",
+      "CLAUDE.md": "deny",
+      "context/rules.md": "deny",
+      "commands/*": "deny",
+      ".claude/*": "deny",
+      ".opencode/*": "deny",
+      "opencode.json": "deny",
+      "scripts/*": "deny",
+      "automation/*": "deny",
+      ".github/*": "deny"
+    },
+    "bash": "ask",
+    "webfetch": "ask"
   }
 }

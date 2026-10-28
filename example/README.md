@@ -7,7 +7,7 @@ Kestrel Bakery Cooperative does not exist. The company, the people and every num
 - `personal-info.md` describes the role of whoever runs the workspace, and who else uses it.
 - `rules.md` names who approves what, because more than one person depends on the output.
 - `context/team.md` is one extra file: who is on the team and who decides what.
-- `data/kpi-tracker.md` holds the figures the whole team agrees on.
+- `data/kpis.csv` and `data/targets.csv` hold the figures the whole team agrees on.
 - Drafts in `outputs/drafts/` are reviewed by a named person before anything leaves.
 
 ## Try it
@@ -16,7 +16,8 @@ Do this in a fresh copy of the kit, because it replaces the template files in `c
 
 ```bash
 cp -r example/context/. context/
-cp example/data/kpi-tracker.md data/kpi-tracker.md
+cp example/data/kpis.csv data/kpis.csv
+cp example/data/targets.csv data/targets.csv
 ```
 
 Then open your agent in that folder, run `/prime`, then `/daily-brief`. You get a brief built from the made-up numbers, saved in `outputs/drafts/`.

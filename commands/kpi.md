@@ -1,24 +1,25 @@
 # KPI
 
-Keep the numbers in one place: `data/kpi-tracker.md`.
+The numbers live in two files that a script reads and writes: `data/kpis.csv` (readings) and `data/targets.csv` (what each metric should reach). You run the script. You never edit either CSV by hand and never do the arithmetic yourself.
 
 ## Variables
 
 request: $ARGUMENTS
-- empty: show the status table
-- `add <metric> <value> [note]`: record a new reading
+- empty or `status`: show the status table
+- `add <metric> <value> <source> [note]`: record a reading (the source is where the number came from)
 - `define <metric> <unit> <target> <up|down>`: add a new metric
 
 ## Steps
 
-1. Read `data/kpi-tracker.md`. It has a **Metrics** table (what to measure, unit, target, which direction is good) and a **Readings** log (date, metric, value, note).
-2. If `request` is empty: for every metric print the latest reading, the target, the gap, and the change since the previous reading. Mark each one `on track`, `behind` or `no data`. Then say in one sentence which metric needs attention first.
-3. If `request` starts with `add`: get today's date from the system. Append one row to **Readings**. The metric must already exist in **Metrics**; if it does not, stop and tell me to `define` it first. Never change or delete an earlier reading.
-4. If `request` starts with `define`: append one row to **Metrics**. Do not create duplicates.
-5. After any change, print the status table again.
+Run the script with `python3` (if that command is not found, use `python`, then `py`).
+
+1. Empty or `status`: run `python3 scripts/kpi.py status` and print its table as it is. Then say in one sentence which metric needs attention first.
+2. `add`: run `python3 scripts/kpi.py add "<metric>" <value> --source "<source>"` (add `--note "<note>"` if I gave one). If I did not give a source, ask me for it. The script prints the new table.
+3. `define`: run `python3 scripts/kpi.py define "<metric>" "<unit>" <target> <up|down>`.
+4. If the script refuses (unknown metric, bad number, a value far from the last one, a duplicate date), show me its message and ask. Use `--confirm` only after I say the number is right.
 
 ## Rules
 
-- Only write numbers I gave you. Never estimate or fill a gap.
-- If a value looks wrong (10x the last reading, a negative count), ask before writing it.
-- Do not put personal or customer data in this file. Aggregate figures only.
+- Only record numbers I gave you. Never estimate or fill a gap.
+- Never change or delete an earlier reading. To correct one, tell me; I edit the file myself.
+- Aggregate figures only: no names, no personal data.

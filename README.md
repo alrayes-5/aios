@@ -1,38 +1,36 @@
-# AIOS: the AI Operating System
+# AIOS
 
-A free starter kit by **Ahmed Elrayes**. Plain files and a few commands that turn any AI agent into one that knows your business and starts every session informed. Personal by default, adapts to a company.
+A free starter kit by **Ahmed Elrayes**: plain files and four commands that make an AI agent know you and your business at the start of every session. For Claude Code, OpenCode or any other AI tool.
 
-**Know, measure, think, act on its own, deliver.** Five layers, one working starter for each:
+This is what `/daily-brief` printed in the made-up bakery company in `example/` (Claude Sonnet 5.5 following `commands/daily-brief.md`, see TESTING.md):
 
-| Layer | Starter in this kit |
-| ----- | ------------------- |
-| 1. Context: what the business is | `AGENTS.md`, `context/` (4 files + `rules.md`), `/prime`, `/create-plan`, `/implement`, a private folder |
-| 2. Data: the numbers in one place | `data/kpi-tracker.md`, `/kpi` |
-| 3. Intelligence: raw context into judgment | `/daily-brief`: what matters, what slipped, what to do |
-| 4. Automation: work without a session | a guard hook, a session-start hook, a scheduled morning brief (cron, or Task Scheduler on Windows) |
-| 5. Output: what leaves the workspace | `outputs/drafts/`: the AI writes drafts, a person sends them |
+```text
+# Daily brief, 2026-10-28
 
-Built for Claude Code and OpenCode, and usable with any other AI tool: give it the folder and a ready prompt (no guard there). Claude Code counts as tested on two grounds only: Ahmed Elrayes tested the template in Claude Code, OpenCode, AlphaCode and Codex on Windows, and a live run of this kit in Claude Code 2.1.312 on his Windows PC worked for the template and found guard problems, which are fixed. The guard and hooks were not part of his tests; they were tested in OpenCode on Linux. [START_HERE.md](START_HERE.md) lists exactly what was tested and what was not.
+## Matters
+1. On-time wholesale deliveries (priority 1): 91% against a 98% target, gap -7, change -8, behind. Two deliveries were late last week because of a van repair (context/current-data.md).
+2. Bread waste (priority 2): 6.2% against 5%, gap +1.2, change -0.9, behind but improving.
+3. Wholesale accounts (priority 3): 12 against 14, gap -2, behind. A hotel kitchen asked for a sample box on 22 October and three accounts asked for larger December orders; none answered or confirmed.
 
-## Start
+## Slipped
+- Behind target in the status table: loaves baked (2380 vs 2400), bread waste, on-time deliveries, active wholesale accounts, shop revenue.
+- Oven full inspection is due by 7 November and is not booked (context/current-data.md).
+- Hotel kitchen sample box: asked 22 October, no reply sent (context/current-data.md).
+- No STALE readings: every reading is 2 days old.
 
-Read **[START_HERE.md](START_HERE.md)**. Set up the `cs` and `cr` aliases first, then pick your path.
+## Do
+1. Dana: book the oven inspection before 7 November. Why: due date is close. Needs approval from Leo if it involves spending.
+2. Me: draft the reply to the hotel kitchen about the sample box. Why: waiting since 22 October. Dana reviews and sends.
+3. Dana: check what else, beyond the van repair, caused the late deliveries. Why: on-time delivery is behind its target.
 
-## What is in here
-
-```
-AGENTS.md          main instructions (CLAUDE.md points to it)
-START_HERE.md      setup, in order
-context/           who you are, the business, strategy, current state, rules
-data/              KPI tracker
-commands/          the commands, written once as plain steps
-.claude/ .opencode/  thin wrappers and settings for Claude Code and OpenCode
-.aios/             the guard and the session-start script
-automation/        a scheduled morning brief
-example/           one made-up company, filled in, as a company setup
+## Gaps
+- Cause of the late deliveries beyond the van repair: not in the files.
+- Cost of the oven inspection: not in the files.
+- No plans or earlier drafts exist.
 ```
 
-## Credits and licence
+**Start:** [START_HERE.md](START_HERE.md), about 15 minutes. **Update:** [UPDATING.md](UPDATING.md). **What was tested, and what was not:** [TESTING.md](TESTING.md). **Changes:** [CHANGELOG.md](CHANGELOG.md).
 
-- AIOS is by Ahmed Elrayes, under the [MIT licence](LICENSE).
-- `.claude/skills/skill-creator/` was originally Anthropic's `skill-creator`, adapted by OpenAI for Codex, and taken from OpenClaw's bundled copy; it is changed here only for AIOS ("Codex" to "the agent", punctuation). It is under the Apache License 2.0: its `license.txt` is kept and `NOTICE.md` says the same. Thank you, Anthropic, OpenAI and OpenClaw.
+**Safe by default:** Claude Code and OpenCode ask before a shell command, and cannot edit the files that steer them (`AGENTS.md`, `commands/` and a few more). In any other tool those are instructions, not enforced rules.
+
+By Ahmed Elrayes, under the [MIT licence](LICENSE).

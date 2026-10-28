@@ -6,9 +6,9 @@ Layer 4: work that happens without a session.
 
 | What | Where | When it runs |
 | ---- | ----- | ------------ |
-| Guard | `.aios/guard.py` | Before every tool call, in Claude Code and OpenCode (Windows too) |
-| Session start | `.aios/session-start.py` | When a Claude Code session starts |
 | Morning brief | `automation/morning-brief.sh` | When you schedule it (below) |
+
+The brief runs `/daily-brief`, which runs `scripts/kpi.py status`. The script is the only shell command it is allowed to run.
 
 ## Schedule the morning brief
 
@@ -33,11 +33,11 @@ Find the full path of the agent with `command -v claude` (or `command -v opencod
 - **Triggers:** New, Weekly, Monday to Friday, 07:30.
 - **Actions:** New, Start a program.
   - Program/script: the full path from above (for example `C:\Users\you\AppData\Roaming\npm\claude.cmd`).
-  - Add arguments: `-p "/daily-brief" --allowedTools Read Glob Grep "Write(outputs/drafts/**)" "Bash(date)"`. For OpenCode use `run --command daily-brief ""` instead.
+  - Add arguments: `-p "/daily-brief" --allowedTools Read Glob Grep "Edit(outputs/drafts/**)" "Bash(python scripts/kpi.py status)"`. For OpenCode use `run --command daily-brief ""` instead.
   - Start in: the full path of your AIOS folder (for example `C:\Users\you\aios`). This one matters: the agent reads the workspace from where it starts.
 - **Conditions:** untick "Start the task only if the computer is on AC power" if you use a laptop.
 
-Run the task once from Task Scheduler (right-click, Run) and check that `outputs/drafts/daily-brief-<date>.md` appears. This was not run when the kit was tested: see "What was tested" in `START_HERE.md`.
+Run the task once from Task Scheduler (right-click, Run) and check that `outputs/drafts/daily-brief-<date>.md` appears. This was not run when the kit was tested: see [TESTING.md](../TESTING.md).
 
 ## Next steps (not in the kit)
 

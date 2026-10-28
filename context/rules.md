@@ -6,17 +6,17 @@
 
 ## The AI may do alone
 
-- Read everything in the workspace except `private/`.
+- Read everything in the workspace.
 - Write and edit files in `plans/`, `outputs/` and `data/`.
 - Create plans, drafts, summaries and analyses.
-- Run read-only commands (list, search, print).
+- Run read-only commands (list, search, print). Any other shell command asks you first.
 
 ## Needs your approval first
 
 - Sending anything to anyone: email, messages, posts, documents. The AI writes a draft in `outputs/drafts/`, you send it.
 - Spending money, buying, subscribing, or changing an account.
 - Deleting or overwriting a file that was not created in this session.
-- Changing a protected file (see `START_HERE.md`, "Protected files"). You make that edit yourself.
+- Changing a protected file (see `AGENTS.md`, "Protected files"). You make that edit yourself.
 - Anything outside this workspace folder.
 - Installing software or giving a tool new access.
 
@@ -26,7 +26,7 @@
 - Customer or employee personal data (names with contact details, ID numbers, health or payment data).
 - Anything covered by a contract or a law that forbids sharing it with an AI service.
 
-Keep any of that outside this folder. If you need the AI to know it exists, write a one-line note, not the data. The `private/` folder is for files that stay on your machine and that the AI is blocked from reading, but treat it as a drawer, not a vault: on a harness where the guard does not apply (see `START_HERE.md`), do not rely on it.
+Keep any of that outside this folder. If you need the AI to know it exists, write a one-line note, not the data. No setting in this kit stops an AI from reading what is in the folder, so what is in the folder is what the AI can read.
 
 ## If a rule gets in the way
 

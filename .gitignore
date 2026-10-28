@@ -1,7 +1,3 @@
-# The AI is blocked from private/, and git never sees it either
-private/*
-!private/README.md
-
 # Secrets and local settings
 .env
 .env.*

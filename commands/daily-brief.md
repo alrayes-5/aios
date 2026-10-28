@@ -9,15 +9,14 @@ focus: $ARGUMENTS (optional: a project, a person or a topic to weigh more heavil
 ## Steps
 
 1. Read `context/strategy.md`, `context/current-data.md`, `context/personal-info.md` and `context/rules.md`.
-2. Read `data/kpi-tracker.md`. For each metric, find the latest reading and compare it with the target.
+2. Run `python3 scripts/kpi.py status` (if `python3` is not found, use `python`, then `py`). Use its table as it is: do not recompute a gap or a change. Its first line gives today's date; use that date everywhere. Any row marked STALE is a reading older than 7 days: say it is stale, do not treat it as current.
 3. List `plans/` and `outputs/drafts/`. Note plans whose status is still `Draft` and drafts that have not been sent.
-4. Get today's date from the system, not from memory.
-5. Decide, using only what is in those files:
-   - **What matters today:** at most three items, tied to a strategic priority.
-   - **What slipped:** anything past its date, below target, or with no update for more than two weeks. Name the file or metric the evidence comes from.
-   - **What to do:** at most three actions, each with an owner (me or you) and one line on why. Mark anything that needs my approval under `context/rules.md`.
-6. Never invent a number, a date or a name. If the files do not say, write "not in the files" and add it to **Gaps**.
-7. Save the brief as `outputs/drafts/daily-brief-YYYY-MM-DD.md` (today's date) with the headings: Matters, Slipped, Do, Gaps. If the file exists, overwrite it.
+4. Decide, using only what is in those files and the table:
+   - **Matters:** at most three items, tied to a strategic priority.
+   - **Slipped:** anything past its date, behind its target, stale, or with no update for more than two weeks. Name the file or metric the evidence comes from.
+   - **Do:** at most three actions, each with an owner (me or you) and one line on why. Mark anything that needs my approval under `context/rules.md`.
+5. Never invent a number, a date or a name. If the files do not say, write "not in the files" and add it to **Gaps**.
+6. Save the brief as `outputs/drafts/daily-brief-YYYY-MM-DD.md` with the headings: Matters, Slipped, Do, Gaps. If the file exists, overwrite it.
 
 ## Report
 

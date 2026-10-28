@@ -1,0 +1,21 @@
+date,metric,value,source,note
+2026-10-05,Loaves baked,2210,bakery production log,
+2026-10-05,Bread waste,9.4,bakery production log,
+2026-10-05,On-time wholesale deliveries,97,delivery sheet,
+2026-10-05,Active wholesale accounts,11,accounts list,
+2026-10-05,Shop revenue,8.6,till report,
+2026-10-12,Loaves baked,2290,bakery production log,
+2026-10-12,Bread waste,8.8,bakery production log,
+2026-10-12,On-time wholesale deliveries,98,delivery sheet,
+2026-10-12,Active wholesale accounts,11,accounts list,
+2026-10-12,Shop revenue,8.9,till report,
+2026-10-19,Loaves baked,2330,bakery production log,
+2026-10-19,Bread waste,7.1,bakery production log,food bank partner started
+2026-10-19,On-time wholesale deliveries,99,delivery sheet,
+2026-10-19,Active wholesale accounts,12,accounts list,one new cafe
+2026-10-19,Shop revenue,9.1,till report,
+2026-10-26,Loaves baked,2380,bakery production log,
+2026-10-26,Bread waste,6.2,bakery production log,
+2026-10-26,On-time wholesale deliveries,91,delivery sheet,"van repair, two late runs"
+2026-10-26,Active wholesale accounts,12,accounts list,
+2026-10-26,Shop revenue,8.7,till report,

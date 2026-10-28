@@ -1,6 +1,6 @@
 # Current Data
 
-> Made-up state for illustration. The numbers behind the story live in `data/kpi-tracker.md`.
+> Made-up state for illustration. The numbers behind the story live in `data/kpis.csv`.
 
 ## Current State
 
